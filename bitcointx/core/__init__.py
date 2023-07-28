@@ -209,6 +209,9 @@ class CoreBitcoinClass(CoreCoinClass, metaclass=CoreBitcoinClassDispatcher):
 
 
 class CoreCoinParams(CoreCoinClass, next_dispatch_final=True):
+    PSBT_MAGIC_HEADER_BYTES = b'psbt\xff'
+    PSBT_MAGIC_HEADER_BASE64 = 'cHNidP'
+    TAPROOT_LEAF_TAPSCRIPT = 0xc0
     COIN = 100000000
     MAX_BLOCK_WEIGHT = 4000000
     WITNESS_SCALE_FACTOR = 4
